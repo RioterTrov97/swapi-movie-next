@@ -1,0 +1,78 @@
+//favourite button colors
+$fav-button-bg-color: rgb(255, 0, 119);
+$fav-button-hover-color: rgb(224, 0, 0);
+
+//card colors
+$card-bg-color: white;
+$card-hover-color: rgb(250, 243, 255);
+
+.MovieCard {
+	width: 350px;
+	margin: 0 20px;
+	margin-bottom: 30px;
+	background: $card-bg-color;
+	cursor: pointer;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+	border-radius: 5px;
+	position: relative;
+	transform: scale(1);
+	transition: background 200ms ease-in-out;
+
+	@media not all and (pointer: coarse) {
+		&:hover {
+			background: $card-hover-color;
+		}
+	}
+
+	&__episode {
+		margin-top: 40px;
+		color: rgb(92, 92, 92);
+	}
+
+	&__title {
+		font-size: 26px;
+		font-weight: 700;
+	}
+
+	&__description {
+		font-style: italic;
+		margin: 20px 30px;
+		text-align: justify;
+	}
+
+	&__director {
+		margin-bottom: -40px;
+		font-weight: 600;
+		font-style: italic;
+		color: rgb(39, 39, 39);
+	}
+
+	&__icons {
+		margin-top: 40px;
+		margin-bottom: 20px;
+
+		& > i {
+			margin-left: 15px;
+			font-size: 30px;
+		}
+	}
+}
+
+.fa_heart {
+	color: $fav-button-bg-color;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+@media not all and (pointer: coarse) {
+	.fa_heart:hover {
+		color: $fav-button-hover-color;
+	}
+}

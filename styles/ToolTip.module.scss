@@ -1,0 +1,53 @@
+$item-button-bg-color: rgb(83, 83, 83);
+$item-button-hover-color: rgb(0, 0, 0);
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+
+	&__button {
+		background: $item-button-bg-color;
+		color: white;
+		margin: 10px 10px 10px 0;
+		padding: 10px 20px;
+		border: none;
+		outline: none;
+		border-radius: 5px;
+		cursor: pointer;
+
+		@media screen and (max-width: 600px) {
+			margin: 5px 8px 8px 0;
+			padding: 8px 10px;
+		}
+	}
+	&__button:hover {
+		background: $item-button-hover-color;
+	}
+}
+
+.tooltip .tooltiptext {
+	display: none;
+	min-width: 150px;
+	background-color: black;
+	color: #fff;
+	text-align: left;
+	border-radius: 6px;
+	padding: 5px 5px 5px 10px;
+
+	/* Position the tooltip */
+	top: 90%;
+	left: 0;
+	position: absolute;
+	z-index: 1;
+
+	> p {
+		color: rgb(255, 255, 255) !important;
+		font-size: 11px !important;
+		padding: 5px 10px !important;
+		font-weight: bold;
+	}
+}
+
+.tooltip:hover .tooltiptext {
+	display: block;
+}

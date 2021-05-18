@@ -1,0 +1,131 @@
+//buttons colors
+$back-button-bg-color: rgb(132, 0, 255);
+$back-button-hover-color: rgb(192, 2, 218);
+
+//background colors
+$details-background-color: white;
+
+.MovieScreen {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	&__container {
+		min-width: 90%;
+		max-width: 90%;
+		min-height: 90vh;
+		margin-top: 5vh;
+		margin-bottom: 5vh;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		border-radius: 20px;
+		background: $details-background-color;
+
+		@media screen and (max-width: 600px) {
+			min-width: 95%;
+			max-width: 95%;
+			margin-top: 1vh;
+			margin-bottom: 1vh;
+		}
+
+		> div {
+			padding: 0 30px;
+
+			@media screen and (max-width: 600px) {
+				padding: 0 15px;
+			}
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+
+		&__button {
+			font-size: 36px;
+			margin-right: 20px;
+			padding-top: 6px;
+			color: $back-button-bg-color;
+			cursor: pointer;
+
+			@media screen and (max-width: 600px) {
+				font-size: 26px;
+				margin-right: 15px;
+			}
+		}
+
+		&__button:hover {
+			color: $back-button-hover-color;
+		}
+
+		&__episode {
+			font-size: 36px;
+			color: rgb(80, 78, 78);
+			text-align: left;
+
+			@media screen and (max-width: 600px) {
+				font-size: 26px;
+				font-weight: bold;
+				color: rgb(31, 31, 31);
+			}
+		}
+
+		&__title {
+			font-size: 36px;
+			font-weight: bold;
+			color: rgb(31, 31, 31);
+
+			@media screen and (max-width: 600px) {
+				font-size: 26px;
+			}
+		}
+	}
+
+	&__description {
+		margin: 30px 0;
+		> p {
+			font-weight: bold;
+			font-size: 20px;
+			margin-bottom: 5px;
+			line-height: 40px;
+			text-align: justify;
+			> span {
+				font-weight: 400;
+			}
+
+			@media screen and (max-width: 600px) {
+				font-size: 17px;
+			}
+		}
+	}
+
+	&__details {
+		margin: 25px 0 20px 0;
+		> p {
+			margin-right: 20px;
+			margin-bottom: 10px;
+			font-style: italic;
+		}
+	}
+
+	&__characters {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin: 30px 20px 30px 0;
+
+		> p {
+			font-weight: bold;
+			font-size: 20px;
+			margin-bottom: 8px;
+		}
+	}
+
+	&__edited {
+		margin-bottom: 20px;
+		> p {
+			font-style: italic;
+			color: gray;
+		}
+	}
+}

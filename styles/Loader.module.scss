@@ -1,0 +1,71 @@
+//loader text and other colors
+$spinner-color: rgb(132, 0, 255);
+$text-color: rgb(192, 2, 218);
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.lds_hourglass {
+	display: inline-block;
+	position: relative;
+	width: 300px;
+	height: 100vh;
+	top: 0;
+
+	&__text {
+		position: absolute;
+		width: 300px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+
+		> p {
+			max-width: 400px;
+			text-overflow: ellipsis;
+			text-align: center;
+			color: $text-color;
+			font-weight: bold;
+			font-size: 24px;
+		}
+	}
+}
+.lds_hourglass:after {
+	content: ' ';
+	display: block;
+	position: absolute;
+	top: 35%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	width: 0;
+	height: 0;
+	box-sizing: border-box;
+	border: 60px solid rgb(255, 255, 255);
+	border-color: $spinner-color transparent $spinner-color transparent;
+	animation: lds-hourglass 1.2s infinite;
+
+	@media screen and (max-height: 1000px) {
+		top: 20%;
+	}
+
+	@media screen and (max-height: 500px) {
+		top: 10%;
+	}
+}
+@keyframes lds-hourglass {
+	0% {
+		transform: rotate(0);
+		animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+	50% {
+		transform: rotate(900deg);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	100% {
+		transform: rotate(1800deg);
+	}
+}

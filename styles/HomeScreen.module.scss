@@ -1,0 +1,108 @@
+//search box and button colors
+$input-bg-color: rgb(219, 219, 219);
+$input-focus-color: rgb(223, 217, 255);
+
+$button-bg-color: rgb(84, 0, 218);
+$button-hover-color: rgb(0, 47, 255);
+
+//search list clear button colors
+$clearButton-bg-color: rgb(204, 189, 253);
+$clearButton-hover-color: rgb(153, 0, 255);
+
+.HomeScreen {
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+
+	&__container {
+		max-width: 1400px;
+	}
+
+	&__search {
+		width: 100%;
+		max-width: 100vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 30px;
+		position: relative;
+
+		> input {
+			width: 48%;
+			max-width: 400px;
+			padding: 16px 20px;
+			margin-right: 20px;
+			border: none;
+			background: $input-bg-color;
+			font-size: 16px;
+			border-radius: 5px;
+			outline: none;
+		}
+
+		> input:focus {
+			background: $input-focus-color;
+		}
+
+		> button {
+			border: none;
+			padding: 16px 20px;
+			font-size: 16px;
+			border-radius: 5px;
+			color: white;
+			background: $button-bg-color;
+			cursor: pointer;
+			transition: background 200ms ease-in;
+		}
+
+		@media not all and (pointer: coarse) {
+			> button:hover {
+				background: $button-hover-color;
+			}
+		}
+	}
+
+	&__movieList {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 30px;
+
+		&__resultClear {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			margin: 0px 20px 30px -5px;
+
+			> button {
+				padding: 20px 40px;
+				cursor: pointer;
+				font-size: 20px;
+				text-align: center;
+				border-radius: 100px;
+				border: none;
+				outline: none;
+				background: linear-gradient(
+						to left,
+						$clearButton-bg-color 60%,
+						$clearButton-hover-color 80%
+					)
+					right;
+				background-size: 400%;
+				transition: 350ms ease-out;
+			}
+
+			> button:hover {
+				background-position: left;
+				color: white;
+			}
+		}
+
+		&__results {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+}
