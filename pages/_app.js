@@ -11,7 +11,12 @@ function MyApp({ Component, pageProps }) {
 	Router.events.on('routeChangeComplete', (url) => {
 		setLoading(() => false);
 	});
-	return loading ? <Loader /> : <Component {...pageProps} />;
+	return (
+		<>
+			{loading && <Loader />}
+			<Component {...pageProps} />
+		</>
+	);
 }
 
 export default MyApp;
